@@ -1,0 +1,14 @@
+.lingheight50{
+  line-height: 50px;
+}
+mat-expansion-panel-header{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+}
+mat-expansion-panel {
+  width: 100%;
+  max-width: 500px;
+}
+.panel-description {
+  flex-direction: row-reverse;
+}

@@ -1,0 +1,35 @@
+<mat-expansion-panel class="flex-item"
+                     [expanded]="isFocused"
+                     [disabled]="!isChecked"
+                     [hideToggle]="true"
+                     #panel>
+  <mat-expansion-panel-header class="panel-header-flex" style="height: 48px">
+    <mat-panel-title>
+      <div class="flex-box">
+        <i class="iconfont icon-{{iconClass}} margin-right-5 primary-color"></i>
+        <span>公开{{typeText}}</span>
+      </div>
+    </mat-panel-title>
+    <mat-panel-description class="panel-description">
+      <mat-slide-toggle color="accent"
+                        [(checked)]="isChecked"
+                        (change)="checkedChange($event)"></mat-slide-toggle>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field class="width100">
+    <input matInput placeholder="{{typeText}}账号"
+           #accountInput [(ngModel)]="accountName" name="accountInput">
+    <i matSuffix [class]="'iconfont icon-yanjing'"></i>
+    <mat-hint align="start" >
+      <strong class="warn">请输入{{typeText}}账号</strong>
+    </mat-hint>
+
+  </mat-form-field>
+  <mat-action-row >
+    <button mat-raised-button
+            color="primary"
+            (click)="updateDetail()">
+      <span class="primary-text"><b>更新信息</b></span>
+    </button>
+  </mat-action-row>
+</mat-expansion-panel>

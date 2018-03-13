@@ -1,0 +1,10 @@
+<div class="operation-bar operationBarHeight context-container" >
+  <app-operation-item-share class="operation-item" [data]="shareItem" [style.order]="shareItem['order']">
+  </app-operation-item-share>
+
+  <app-operation-item-comment class="operation-item" [data]="commentItem" [style.order]="commentItem['order']">
+  </app-operation-item-comment>
+  <app-operation-item-like class="operation-item" [data]="likeItem" [style.order]="likeItem['order']"
+                           [reloadIndex]="reloadService.userLoginChange">
+  </app-operation-item-like>
+</div>

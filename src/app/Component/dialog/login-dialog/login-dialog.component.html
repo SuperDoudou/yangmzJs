@@ -1,0 +1,60 @@
+<h3 mat-dialog-title class="accent login-head-box">
+  <i class="login-head-empty"></i>
+  <b class="login-head-title">请登录</b>
+  <button (click)="onCloseClick()" mat-mini-fab matSuffix color="disble" class="login-head-close">
+    <i class="iconfont icon-close"></i>
+  </button>
+</h3>
+
+<mat-dialog-content>
+  <form class="login-form">
+    <mat-form-field class="">
+      <span matPrefix>账号:&nbsp;</span>
+      <input matInput tabindex="-1" placeholder="邮箱地址"
+             #emailInput [(ngModel)]="emailAddress" name="email">
+      <mat-hint *ngIf="!isValidEmail()" align="start" >
+        <strong class="warn">请输入正确的邮箱</strong>
+      </mat-hint>
+
+      <i matSuffix class="iconfont icon-edit1"></i>
+
+    </mat-form-field>
+
+    <mat-form-field class="">
+      <span matPrefix>密码:&nbsp;</span>
+
+      <!--<i matSuffix class="iconfont icon-edit1"></i>-->
+      <input matInput tabindex="-1" type="password" placeholder="密码/验证码"
+             #codeInput [(ngModel)]="loginCode" name="login-code"
+             (keyup.enter)="loginByEmail()">
+
+      <button matSuffix type="button" [disabled]="!(verifyButton.state&&isValidEmail())" mat-raised-button color="primary" (click)="sendVerifyCode()">
+        <span class="primary-text"><b>{{verifyButton.text}}</b></span>
+      </button>
+      <mat-hint align="end"><strong>获取验证码也可以登陆哦( ¯▽¯；)</strong> </mat-hint>
+    </mat-form-field>
+  </form>
+  <h2></h2>
+  <h2></h2>
+  <div class="login-button-box">
+    <button mat-raised-button type="button" color="primary" (click)="loginByEmail()">
+      <span class="primary-text"><b>登陆</b></span>
+    </button>
+  </div>
+</mat-dialog-content>
+
+
+<h2></h2>
+<mat-dialog-content>
+  <div class="login-logo-box">
+    <i class="login logo-qq"></i>
+    <i class="login logo-wechat"></i>
+    <i class="login logo-weibo"></i>
+  </div>
+</mat-dialog-content>
+<!--<div class="login-buttom-box">-->
+  <!--<button mat-raised-button mat-dialog-close class="login-box-close" class="secondary">-->
+    <!--<span class="secondary"><b>取消</b></span>-->
+  <!--</button>-->
+<!--</div>-->
+

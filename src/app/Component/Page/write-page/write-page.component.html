@@ -1,0 +1,31 @@
+<h2>开始晒</h2>
+
+<div class="flex-box margin-top-5">
+  <div class="full-width title-input" style="display: block">
+    <mat-form-field class="full-width">
+      <input matInput tabindex="-1" placeholder="作品标题" value=""
+             #titleInput [(ngModel)]="title" name="title">
+      <i matSuffix class="iconfont icon-edit1"></i>
+      <mat-hint align="start" >
+        <strong class="warn">一句话描述一下您的作品</strong>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="flex-box margin-top-15">
+  <input type="file" id="uploadImage" ng2FileSelect [uploader]="uploader"
+         (change)="onUploadImage($event)" multiple style="display: none"/>
+  <button mat-raised-button type="button" color="primary" onclick="uploadImage.click()">
+    <span class="primary-text"><b>选择图片</b></span>
+  </button>
+</div>
+
+<ng-template appWritePageText></ng-template>
+
+<div class="flex-box margin-top-15" *ngIf="this.isUploadImage">
+  <button mat-raised-button type="button" color="primary" (click)="uploadArticle()">
+    <span class="primary-text"><b>上传作品</b></span>
+  </button>
+</div>
+

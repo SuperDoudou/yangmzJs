@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="context-container">
+  <app-tool-bar></app-tool-bar>
+  <div class="toolBarHeight"></div>
+  <div class="body-container">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="operationBarHeight"></div>
+  <app-operation-bar
+    *ngIf="baseDataService.isNeedOperationBar"
+    [operationBarItems]="this.baseDataService.operationBarItems">
+  </app-operation-bar>
+</div>
+
+

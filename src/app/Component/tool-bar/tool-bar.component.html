@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" class="flex-box tool-bar-flex-box toolBarHeight context-container">
+  <div id="tool-bar-back" class="flex-item">
+    <button mat-icon-button (click)="goBack()">
+      <i class="iconfont icon-xiangzuo1 primary-text"></i>
+    </button>
+  </div>
+  <span id="tool-bar-page-title" class="primary-text flex-item">{{this.baseDataService.toolBarTitle}}</span>
+  <app-menu id="tool-bar-menu" class="primary-text flex-item"></app-menu>
+
+</mat-toolbar>

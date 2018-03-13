@@ -1,0 +1,23 @@
+.operation-bar {
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  justify-content: space-around;
+  margin-left: 0px;
+  width: 100%;
+  position: fixed;
+  bottom: -1px;
+  -webkit-transform: translateZ(0);
+  background-color: #fdfdfd;
+  /*上阴影*/
+  box-shadow: 0px -5px 5px #eeeeee;
+}
+
+.operation-item{
+  margin-top: 0px;
+  flex: auto;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

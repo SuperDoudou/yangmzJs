@@ -1,0 +1,30 @@
+<div class="article-item">
+  <a [routerLink]="link" routerLinkActive="active">
+    <img class="article-item-image" [src]="headImageAddress"/>
+  </a>
+  <div>
+    {{title}}
+  </div>
+  <div class="article-brief-box">
+    <i class="iconfont icon-chakan article-brief-size"></i>
+    <p class=" article-brief-size brief-margin">{{viewNum}}</p>
+
+    <i class="iconfont icon-zantong article-brief-size"></i>
+    <p class="article-brief-size brief-margin">{{likeNum}}</p>
+
+    <i class="iconfont icon-31pinglun article-brief-size"></i>
+    <p class="article-brief-size brief-margin">{{commentNum}}</p>
+  </div>
+  <div class="article-user-box">
+    <img class="authPic auth-small-image" [src]="userPortraitAddress"/>
+    <div class="article-user-brief-box">
+      <div class="user-brief-size">
+        {{userName}}
+      </div>
+      <div class="user-brief-size">
+        于{{createTime}}
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,57 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <i class="iconfont icon-caidan"></i>
+</button>
+<mat-menu #menu="matMenu">
+
+  <div *ngIf="!isLogin()">
+    <button mat-menu-item (click)="openLoginDialog()" >
+      <span class="flex-box">
+        <i class="iconfont icon-wode margin-right-5"></i>
+        <span>登陆</span>
+      </span>
+    </button>
+  </div>
+
+  <div *ngIf="isLogin()">
+    <a routerLink="/usercenter" routerLinkActive="active">
+    <button mat-menu-item (click)="openUserCenter()" >
+      <span class="flex-box">
+        <i class="iconfont icon-wode margin-right-5"></i>
+        <span>我的</span>
+      </span>
+    </button>
+    </a>
+  </div>
+
+  <button mat-menu-item disabled>
+    <span class="flex-box">
+      <i class="iconfont icon-zengsong margin-right-5"></i>
+      <span>逛逛</span>
+    </span>
+  </button>
+
+  <a routerLink="/write" routerLinkActive="active">
+    <button mat-menu-item>
+      <span class="flex-box">
+        <i class="iconfont icon-share margin-right-5"></i>
+        <span>晒照</span>
+      </span>
+    </button>
+  </a>
+  <a routerLink="/" routerLinkActive="active">
+    <button mat-menu-item>
+      <span class="flex-box">
+        <i class="iconfont icon-shouye margin-right-5"></i>
+        <span>主页</span>
+      </span>
+    </button>
+  </a>
+  <div *ngIf="isLogin()">
+    <button mat-menu-item (click)="loginOut()" >
+      <span class="flex-box">
+        <i class="iconfont icon-exit margin-right-5"></i>
+        <span>注销</span>
+      </span>
+    </button>
+  </div>
+</mat-menu>

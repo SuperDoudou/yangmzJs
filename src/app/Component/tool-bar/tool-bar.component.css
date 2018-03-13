@@ -1,0 +1,25 @@
+.tool-bar-flex-box {
+  padding: 0;
+  display: flex;
+  top: 0;
+  position: fixed;
+  justify-content: space-between;
+}
+
+#tool-bar-back {
+  flex: 1 1 auto;
+  font-weight:bold;
+}
+
+#tool-bar-page-title {
+  flex: 1 1 auto;
+}
+
+#tool-bar-menu{
+  flex: 0 1 auto;
+  font-weight:bold;
+}
+#tool-bar-back-icon {
+}
+
+

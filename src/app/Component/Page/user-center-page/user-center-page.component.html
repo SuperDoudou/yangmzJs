@@ -1,0 +1,144 @@
+<mat-tab-group color="accent">
+  <mat-tab label="基本信息">
+    <div class="flex-box tab-box">
+      <img class="userPicCircle userPic" src="{{userService.portrait}}">
+    </div>
+    <div class="flex-box tab-box" *ngIf="isShowProcess">
+      <mat-progress-bar
+        class="example-margin"
+        color="accent"
+        mode="buffer"
+        [value]="uploader.progress"
+        [bufferValue]="0">
+      </mat-progress-bar>
+    </div>
+    <div class="flex-box tab-box margin-top-5">
+      <!--无法二次提交头像-->
+      <input type="file" id="uploadPortrait" ng2FileSelect [uploader]="uploader"
+             (change)="uploadPortraitChange($event)" style="display: none"/>
+      <button mat-raised-button type="button" color="primary" onclick="uploadPortrait.click()">
+        <span class="primary-text"><b>换个头像</b></span>
+      </button>
+    </div>
+
+    <div class="margin-top-10"></div>
+    <div class="tab-box flex-box">
+      <mat-expansion-panel class="flex-item" [expanded]="step === 'name'" (opened)="step='name'">
+        <mat-expansion-panel-header>
+          <div class="flex-box">
+            <i class="iconfont icon-wode"></i>
+            <span>&nbsp;&nbsp;&nbsp;{{userService.userName}}</span>
+          </div>
+        </mat-expansion-panel-header>
+        <mat-form-field class="width100">
+          <input matInput tabindex="-1" placeholder="用户名" value=""
+                 #userNameInput [(ngModel)]="userNameCache" name="userNameInput">
+          <i matSuffix class="iconfont icon-edit1"></i>
+          <mat-hint align="start" >
+            <strong class="warn">请不要超过10个汉字哦</strong>
+          </mat-hint>
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-raised-button color="primary" (click)="updateUser()">
+            <span class="primary-text"><b>修改昵称</b></span>
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </div>
+
+    <div class="tab-box flex-box">
+      <mat-expansion-panel class="flex-item" [expanded]="step === 'password'" (opened)="step='password'">
+        <mat-expansion-panel-header>
+          <div class="flex-box">
+            <i class="iconfont icon-lock"></i>
+            <span>&nbsp;&nbsp;&nbsp;悄悄修改密码</span>
+          </div>
+        </mat-expansion-panel-header>
+        <mat-form-field class="width100 margin-top-10">
+          <input matInput placeholder="旧密码" [type]="passwordOldHide ? 'password' : 'text'"
+                 #oldPassword [(ngModel)]="oldPasswordInput">
+          <i matSuffix [class]="passwordOldHide ? 'iconfont icon-biyan' : 'iconfont icon-yanjing'"
+             (click)="passwordOldHide = !passwordOldHide">
+          </i>
+          <mat-hint align="start" >
+            <strong class="warn">未设置密码或重置密码不用填写</strong>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field class="width100 margin-top-10">
+          <input matInput placeholder="新密码" [type]="passwordNewHide ? 'password' : 'text'"
+                 #newPassword [(ngModel)]="newPasswordInput">
+          <i matSuffix [class]="passwordNewHide ? 'iconfont icon-biyan' : 'iconfont icon-yanjing'"
+             (click)="passwordNewHide = !passwordNewHide">
+          </i>
+          <mat-hint align="start" >
+            <strong class="warn">请超过6个字符</strong>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field class="width100 margin-top-10">
+          <input matInput placeholder="确认密码" [type]="passwordConfirmHide ? 'password' : 'text'"
+                 #confirmPassword [(ngModel)]="confirmPasswordInput">
+          <i matSuffix [class]="passwordConfirmHide ? 'iconfont icon-biyan' : 'iconfont icon-yanjing'"
+             (click)="passwordConfirmHide = !passwordConfirmHide">
+          </i>
+          <mat-hint align="start" >
+            <strong class="warn">
+              {{passwordInfo()}}
+            </strong>
+          </mat-hint>
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-raised-button color="primary" (click)="updatePassword()">
+            <span class="primary-text"><b>修改密码</b></span>
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </div>
+
+    <div class="tab-box flex-box">
+      <mat-expansion-panel class="flex-item" [expanded]="step === 'resetPassword'" (opened)="step='resetPassword'">
+        <mat-expansion-panel-header>
+          <div class="flex-box">
+            <i class="iconfont icon-delete"></i>
+            <span>&nbsp;&nbsp;&nbsp;重置密码</span>
+          </div>
+        </mat-expansion-panel-header>
+        <div class="flex-box margin-bottom-15">
+          <button mat-raised-button color="primary" (click)="sendResetVerify()">
+            <span class="primary-text"><b>发送验证码</b></span>
+          </button>
+        </div>
+
+        <mat-form-field class="width100">
+          <input matInput tabindex="-1" placeholder="验证码" value=""
+                 #resetVerify [(ngModel)]="resetVerifyInput">
+          <i matSuffix class="iconfont icon-edit1"></i>
+          <mat-hint align="start" >
+            <strong class="warn">请输入验证码</strong>
+          </mat-hint>
+        </mat-form-field>
+        <mat-action-row>
+          <button mat-raised-button color="warn" (click)="resetPassword()">
+            <span class="primary-text"><b>重置密码</b></span>
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </div>
+    <div class="margin-bottom-15"></div>
+  </mat-tab>
+
+
+  <mat-tab label="详细信息">
+    <ng-template matTabContent>
+      <div class="flex-column-box width100">
+        <img class="userPicCircle userPic" src="{{userService.portrait}}">
+        <app-user-social-account *ngFor="let socialAccount of socialAccountList"
+                               [data]="socialAccount"
+                               [reload]="reloadService.userDetailChange"
+                               (change)="socialAccountToggle($event)"
+                               class="flex-item flex-column-box width100 margin-bottom-25" ></app-user-social-account>
+        <div class="margin-bottom-15"></div>
+      </div>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+

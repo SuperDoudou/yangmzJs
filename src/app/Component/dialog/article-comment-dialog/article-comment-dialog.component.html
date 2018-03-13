@@ -1,0 +1,31 @@
+<h3 mat-dialog-title class="accent login-head-box">
+  <i class="login-head-empty"></i>
+  <b class="login-head-title">请留言</b>
+  <button (click)="onCloseClick()" mat-mini-fab matSuffix color="disble" class="login-head-close">
+    <i class="iconfont icon-close"></i>
+  </button>
+</h3>
+
+<mat-dialog-content>
+  <div class="tip-container">
+    <img class="authPic" src="{{userService.portrait}}"/>
+    <div class="margin-right-10" style="font-weight: bold">To</div>
+    <img class="authPic" src="{{data['userPortraitAddress']}}"/>
+    <div style="font-weight: bold">{{data['title']}}</div>
+  </div>
+  <div class="article-comment-input">
+    <mat-form-field class="full-width">
+      <textarea matInput placeholder="我来说两句" matTextareaAutosize
+                matAutosizeMinRows="2" matAutosizeMaxRows="10"
+                #commentInput [(ngModel)]="inputComment" name="inputComment">
+      </textarea>
+    </mat-form-field>
+  </div>
+  <div style="text-align: center">
+    <button mat-raised-button type="button" color="primary" (click)="uploadComment()">
+      <span class="primary-text"><b>留言</b></span>
+    </button>
+  </div>
+  <div class="margin-bottom-15"></div>
+</mat-dialog-content>
+

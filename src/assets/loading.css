@@ -1,0 +1,160 @@
+.cssload-wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.cssload-center {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cssload-text {
+  text-align: center;
+}
+.cssload-loader {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  margin: 2em;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+.cssload-loader {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  margin: 2em;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+.cssload-loader,
+.cssload-loader:before,
+.cssload-loader:after {
+  animation: 0.95s infinite ease-in-out;
+  -o-animation: 0.95s infinite ease-in-out;
+  -ms-animation: 0.95s infinite ease-in-out;
+  -webkit-animation: 0.95s infinite ease-in-out;
+  -moz-animation: 0.95s infinite ease-in-out;
+}
+.cssload-loader:before,
+.cssload-loader:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cssload-loader:before,
+.cssload-loader:after {
+  content: "";
+}
+
+.cssload-loader {
+  animation: cssload-animation1 0.95s infinite linear;
+  -o-animation: cssload-animation1 0.95s infinite linear;
+  -ms-animation: cssload-animation1 0.95s infinite linear;
+  -webkit-animation: cssload-animation1 0.95s infinite linear;
+  -moz-animation: cssload-animation1 0.95s infinite linear;
+}
+
+.cssload-loader:before,
+.cssload-loader:after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  background-color: rgb(240,98,146);
+  top: 5%;
+}
+.cssload-loader:before {
+  left: -5%;
+  animation: cssload-animation2 0.95s infinite alternate ease-in-out;
+  -o-animation: cssload-animation2 0.95s infinite alternate ease-in-out;
+  -ms-animation: cssload-animation2 0.95s infinite alternate ease-in-out;
+  -webkit-animation: cssload-animation2 0.95s infinite alternate ease-in-out;
+  -moz-animation: cssload-animation2 0.95s infinite alternate ease-in-out;
+  transform-origin: 10% 50%;
+  -o-transform-origin: 10% 50%;
+  -ms-transform-origin: 10% 50%;
+  -webkit-transform-origin: 10% 50%;
+  -moz-transform-origin: 10% 50%;
+}
+.cssload-loader:after {
+  left: auto;
+  right: -5%;
+  animation: cssload-animation2 0.95s 0.95s infinite alternate ease-in-out;
+  -o-animation: cssload-animation2 0.95s 0.95s infinite alternate ease-in-out;
+  -ms-animation: cssload-animation2 0.95s 0.95s infinite alternate ease-in-out;
+  -webkit-animation: cssload-animation2 0.95s 0.95s infinite alternate ease-in-out;
+  -moz-animation: cssload-animation2 0.95s 0.95s infinite alternate ease-in-out;
+  transform: scale(0);
+  -o-transform: scale(0);
+  -ms-transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform-origin: 90% 50%;
+}
+
+
+
+
+
+@keyframes cssload-animation1 {
+  0%	 { transform: rotate(20deg); }
+  100% { transform: rotate(380deg); }
+}
+
+@-o-keyframes cssload-animation1 {
+  0%	 { -o-transform: rotate(20deg); }
+  100% { -o-transform: rotate(380deg); }
+}
+
+@-ms-keyframes cssload-animation1 {
+  0%	 { -ms-transform: rotate(20deg); }
+  100% { -ms-transform: rotate(380deg); }
+}
+
+@-webkit-keyframes cssload-animation1 {
+  0%	 { -webkit-transform: rotate(20deg); }
+  100% { -webkit-transform: rotate(380deg); }
+}
+
+@-moz-keyframes cssload-animation1 {
+  0%	 { -moz-transform: rotate(20deg); }
+  100% { -moz-transform: rotate(380deg); }
+}
+
+@keyframes cssload-animation2 {
+  0%	 { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@-o-keyframes cssload-animation2 {
+  0%	 { -o-transform: scale(0); }
+  100% { -o-transform: scale(1); }
+}
+
+@-ms-keyframes cssload-animation2 {
+  0%	 { -ms-transform: scale(0); }
+  100% { -ms-transform: scale(1); }
+}
+
+@-webkit-keyframes cssload-animation2 {
+  0%	 { -webkit-transform: scale(0); }
+  100% { -webkit-transform: scale(1); }
+}
+
+@-moz-keyframes cssload-animation2 {
+  0%	 { -moz-transform: scale(0); }
+  100% { -moz-transform: scale(1); }
+}

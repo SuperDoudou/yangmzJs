@@ -1,0 +1,28 @@
+form{
+  font-size: 20px;
+}
+.tab-box{
+  justify-content: center;
+}
+
+mat-slide-toggle{
+  font-size: 40px;
+}
+.userPic{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius:500px
+}
+.userPicCircle{
+  border-radius:500px
+}
+mat-expansion-panel {
+  width: 100%;
+  max-width: 500px;
+}
+mat-expansion-panel-header{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+}

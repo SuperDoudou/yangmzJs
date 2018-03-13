@@ -1,0 +1,18 @@
+<div *ngIf="isInit">
+  <div class="flex-box margin-top-15 max-width-100" >
+    <div style="display: block">
+      <img class="max-width-100" [src]="imageSrc" />
+    </div>
+  </div>
+  <div class="flex-box margin-top-10">
+    <div class="full-width text-input" style="display: block">
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="说两句吧" matTextareaAutosize
+                  matAutosizeMinRows="2" matAutosizeMaxRows="10"
+                  #textInput [(ngModel)]="text" name="text">
+        </textarea>
+        <i matSuffix class="iconfont icon-edit1"></i>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

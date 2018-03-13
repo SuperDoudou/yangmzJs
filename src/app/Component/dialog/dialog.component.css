@@ -1,0 +1,75 @@
+.mat-form-field {
+  width: 100%;
+}
+mat-dialog-content{
+  padding: 0 24px;
+  margin: 0px;
+}
+input{
+  background-color: inherit;
+  background: inherit;
+}
+.login-head-box{
+  min-height: 50px;
+  display: flex;
+  padding-bottom: 15px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-head-empty{
+  width : 50px;
+}
+.login-head-title{
+  align-self: flex-end;
+}
+.login-head-close{
+  align-self: flex-start;
+}
+.login-logo-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.login-button-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.login{
+  width: 65px;
+  height: 65px;
+  display: inline-flex;
+  background: url(/assets/login.png) no-repeat;
+  margin-bottom: 15px;
+}
+.logo-qq{
+  background-position: 0px 0;
+}
+.logo-wechat{
+  background-position: -135px 0;
+}
+.logo-weibo{
+  background-position: -67px 0;
+}
+.login-box-close{
+  text-align: center;
+  margin: auto;
+}
+.mat-dialog-title{
+  margin-bottom: 10px;
+}
+.userPic{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+  width: 100px;
+  border-radius:500px
+}
+.userPicCircle{
+  border-radius:500px
+}
+.tip-container{
+  display: flex;
+  align-items: center;
+}

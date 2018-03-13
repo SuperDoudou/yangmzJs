@@ -1,0 +1,34 @@
+<h3 class="center article-title">{{articleTitle}}</h3>
+<div class="article-header-detail-box">
+
+  <i class="iconfont iconfont-header icon-chakan"></i>
+  <p class="article-header-detail">{{viewNum}}</p>
+
+  <i class="iconfont iconfont-header icon-zantong"></i>
+  <p class="article-header-detail">{{likeNum}}</p>
+
+
+  <i class="iconfont iconfont-header icon-31pinglun"></i>
+  <p class="article-header-detail">{{commentNum}}</p>
+
+</div>
+<div class="article-header-box">
+  <img class="authPic" [src]="userPortraitAddress"/>
+  <div class="article-header-info-box">
+    <p class="article-header-detail">{{userName}}</p>
+    <p class="article-header-detail">{{createTime}}</p>
+  </div>
+</div>
+<div class="article-text-container">
+  <ng-template appArticlePageItem></ng-template>
+</div>
+<div id="article-comment-container" class="article-comment-container">
+  <app-article-page-comment *ngFor="let comment of commentList"
+                            class="max-width-100"
+                            [id]="comment['htmlId']"
+                            [data]="comment">
+
+  </app-article-page-comment>
+</div>
+
+<router-outlet></router-outlet>
